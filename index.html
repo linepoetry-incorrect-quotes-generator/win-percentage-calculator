@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Winning Percentage Calculator</title>
+    <meta name="description" content="Calculate your team's winning percentage easily with our simple calculator. Perfect for sports teams and performance tracking.">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        header {
+            text-align: center;
+            padding: 15px 0;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .calculator {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .input-group {
+            margin: 15px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f4f8;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 1.2em;
+            display: none;
+        }
+        .formula {
+            background: #f1f1f1;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .guide {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+        .guide h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .guide ul {
+            padding-left: 20px;
+        }
+        .guide li {
+            margin: 10px 0;
+        }
+        .promo-link {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: #e8f4f8;
+            border-radius: 4px;
+        }
+        .promo-link a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .promo-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Simple Winning Percentage Calculator</h1>
+            <p>Calculate your team's winning percentage quickly and easily. <a href="https://www.calculatorvalue.com/sports/performance/winning-percentage">Try our advanced calculator with ties</a></p>
+        </header>
+
+        <div class="calculator">
+            <h2>Calculator</h2>
+            <div class="input-group">
+                <label for="wins">Number of Wins:</label>
+                <input type="number" id="wins" min="0" required>
+            </div>
+            <div class="input-group">
+                <label for="losses">Number of Losses:</label>
+                <input type="number" id="losses" min="0" required>
+            </div>
+            <button onclick="calculatePercentage()">Calculate</button>
+            <div id="result"></div>
+        </div>
+
+        <div class="formula">
+            <h2>Simple Formula</h2>
+            <p>The winning percentage is calculated using this simple formula:</p>
+            <p><strong>Winning Percentage = (Wins / Total Games) × 100</strong></p>
+            <p>Where Total Games = Wins + Losses</p>
+        </div>
+
+        <div class="guide">
+            <h2>How to Calculate Winning Percentage</h2>
+            <p>Calculating your team's winning percentage is simple:</p>
+            <ol>
+                <li>Count the total number of games played (wins + losses)</li>
+                <li>Divide the number of wins by the total games</li>
+                <li>Multiply by 100 to get the percentage</li>
+            </ol>
+            
+            <h3>Example:</h3>
+            <p>If your team has:</p>
+            <ul>
+                <li>Wins: 15</li>
+                <li>Losses: 5</li>
+                <li>Total Games: 20</li>
+            </ul>
+            <p>Winning Percentage = (15 / 20) × 100 = 75%</p>
+
+            <h3>Tips for Using the Calculator</h3>
+            <ul>
+                <li>Enter whole numbers only (no decimals)</li>
+                <li>Make sure both wins and losses are entered</li>
+                <li>The result will be shown as a percentage</li>
+            </ul>
+        </div>
+
+        <div class="promo-link">
+            <p>Need a more advanced calculator with ties? <a href="https://www.calculatorvalue.com/sports/performance/winning-percentage">Try our advanced winning percentage calculator</a></p>
+        </div>
+
+        <footer>
+            <p>&copy; <span id="currentYear"></span> CalculatorValue. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Set current year in copyright
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        function calculatePercentage() {
+            const wins = parseFloat(document.getElementById('wins').value) || 0;
+            const losses = parseFloat(document.getElementById('losses').value) || 0;
+            
+            const totalGames = wins + losses;
+            
+            if (totalGames === 0) {
+                document.getElementById('result').style.display = 'block';
+                document.getElementById('result').innerHTML = 'Please enter valid numbers';
+                return;
+            }
+
+            const percentage = (wins / totalGames) * 100;
+            
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('result').innerHTML = `Winning Percentage: ${percentage.toFixed(2)}%`;
+        }
+    </script>
+</body>
+</html>

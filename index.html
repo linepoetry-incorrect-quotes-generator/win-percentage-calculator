@@ -3,9 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Winning Percentage Calculator</title>
+    <title>Winning Percentage Calculator | Simple Sports Performance Calculator</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Winning Percentage Calculator | Simple Sports Performance Calculator">
+    <meta name="description" content="Calculate your team's winning percentage instantly with our free online calculator. Simple, accurate, and perfect for sports teams, coaches, and players tracking performance.">
+    <meta name="keywords" content="winning percentage calculator, sports calculator, win percentage, team performance, sports statistics, win loss calculator">
+    <meta name="author" content="CalculatorValue">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.calculatorvalue.com/sports/performance/winning-percentage">
+    <meta property="og:title" content="Winning Percentage Calculator | Simple Sports Performance Calculator">
+    <meta property="og:description" content="Calculate your team's winning percentage instantly with our free online calculator. Simple, accurate, and perfect for sports teams, coaches, and players tracking performance.">
+    <meta property="og:image" content="https://www.calculatorvalue.com/images/winning-percentage-calculator.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.calculatorvalue.com/sports/performance/winning-percentage">
+    <meta property="twitter:title" content="Winning Percentage Calculator | Simple Sports Performance Calculator">
+    <meta property="twitter:description" content="Calculate your team's winning percentage instantly with our free online calculator. Simple, accurate, and perfect for sports teams, coaches, and players tracking performance.">
+    <meta property="twitter:image" content="https://www.calculatorvalue.com/images/winning-percentage-calculator.jpg">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
     <meta name="google-site-verification" content="R2a-Z1Ev5SDz4sz9CPt-1ieYPfzLFanRFEZtD10amsE" />
-    <meta name="description" content="Calculate your team's winning percentage easily with our simple calculator. Perfect for sports teams and performance tracking.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.calculatorvalue.com/sports/performance/winning-percentage">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://www.calculatorvalue.com/favicon.ico">
+    
+    <!-- Existing styles -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -112,64 +144,97 @@
             text-decoration: underline;
         }
     </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Winning Percentage Calculator",
+        "description": "Calculate your team's winning percentage instantly with our free online calculator. Simple, accurate, and perfect for sports teams, coaches, and players tracking performance.",
+        "url": "https://www.calculatorvalue.com/sports/performance/winning-percentage",
+        "applicationCategory": "Sports Performance Tool",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Calculate winning percentage instantly",
+            "Simple and easy to use interface",
+            "Accurate results",
+            "Free to use",
+            "No registration required"
+        ],
+        "screenshot": "https://www.calculatorvalue.com/images/winning-percentage-calculator.jpg",
+        "softwareVersion": "1.0",
+        "author": {
+            "@type": "Organization",
+            "name": "CalculatorValue"
+        }
+    }
+    </script>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Simple Winning Percentage Calculator</h1>
-            <p>Calculate your team's winning percentage quickly and easily. <a href="https://www.calculatorvalue.com/sports/performance/winning-percentage">Try our advanced calculator with ties</a></p>
+            <h1>Winning Percentage Calculator</h1>
+            <p>Calculate your team's winning percentage quickly and easily. <a href="https://www.calculatorvalue.com/sports/performance/winning-percentage" aria-label="Try our advanced calculator with ties">Try our advanced calculator with ties</a></p>
         </header>
 
-        <div class="calculator">
-            <h2>Calculator</h2>
-            <div class="input-group">
-                <label for="wins">Number of Wins:</label>
-                <input type="number" id="wins" min="0" required>
+        <main>
+            <div class="calculator">
+                <h2>Sports Performance Calculator</h2>
+                <div class="input-group">
+                    <label for="wins">Number of Wins:</label>
+                    <input type="number" id="wins" min="0" required aria-label="Enter number of wins">
+                </div>
+                <div class="input-group">
+                    <label for="losses">Number of Losses:</label>
+                    <input type="number" id="losses" min="0" required aria-label="Enter number of losses">
+                </div>
+                <button onclick="calculatePercentage()" aria-label="Calculate winning percentage">Calculate</button>
+                <div id="result" role="alert" aria-live="polite"></div>
             </div>
-            <div class="input-group">
-                <label for="losses">Number of Losses:</label>
-                <input type="number" id="losses" min="0" required>
+
+            <div class="formula">
+                <h2>Winning Percentage Formula</h2>
+                <p>The winning percentage is calculated using this simple formula:</p>
+                <p><strong>Winning Percentage = (Wins / Total Games) × 100</strong></p>
+                <p>Where Total Games = Wins + Losses</p>
             </div>
-            <button onclick="calculatePercentage()">Calculate</button>
-            <div id="result"></div>
-        </div>
 
-        <div class="formula">
-            <h2>Simple Formula</h2>
-            <p>The winning percentage is calculated using this simple formula:</p>
-            <p><strong>Winning Percentage = (Wins / Total Games) × 100</strong></p>
-            <p>Where Total Games = Wins + Losses</p>
-        </div>
+            <div class="guide">
+                <h2>How to Calculate Winning Percentage</h2>
+                <p>Calculating your team's winning percentage is simple:</p>
+                <ol>
+                    <li>Count the total number of games played (wins + losses)</li>
+                    <li>Divide the number of wins by the total games</li>
+                    <li>Multiply by 100 to get the percentage</li>
+                </ol>
+                
+                <h3>Example Calculation</h3>
+                <p>If your team has:</p>
+                <ul>
+                    <li>Wins: 15</li>
+                    <li>Losses: 5</li>
+                    <li>Total Games: 20</li>
+                </ul>
+                <p>Winning Percentage = (15 / 20) × 100 = 75%</p>
 
-        <div class="guide">
-            <h2>How to Calculate Winning Percentage</h2>
-            <p>Calculating your team's winning percentage is simple:</p>
-            <ol>
-                <li>Count the total number of games played (wins + losses)</li>
-                <li>Divide the number of wins by the total games</li>
-                <li>Multiply by 100 to get the percentage</li>
-            </ol>
-            
-            <h3>Example:</h3>
-            <p>If your team has:</p>
-            <ul>
-                <li>Wins: 15</li>
-                <li>Losses: 5</li>
-                <li>Total Games: 20</li>
-            </ul>
-            <p>Winning Percentage = (15 / 20) × 100 = 75%</p>
+                <h3>Tips for Using the Calculator</h3>
+                <ul>
+                    <li>Enter whole numbers only (no decimals)</li>
+                    <li>Make sure both wins and losses are entered</li>
+                    <li>The result will be shown as a percentage</li>
+                </ul>
+            </div>
 
-            <h3>Tips for Using the Calculator</h3>
-            <ul>
-                <li>Enter whole numbers only (no decimals)</li>
-                <li>Make sure both wins and losses are entered</li>
-                <li>The result will be shown as a percentage</li>
-            </ul>
-        </div>
-
-        <div class="promo-link">
-            <p>Need a more advanced calculator with ties? <a href="https://www.calculatorvalue.com/sports/performance/winning-percentage">Try our advanced winning percentage calculator</a></p>
-        </div>
+            <div class="promo-link">
+                <p>Need a more advanced calculator with ties? <a href="https://www.calculatorvalue.com/sports/performance/winning-percentage" aria-label="Try our advanced winning percentage calculator with ties">Try our advanced winning percentage calculator</a></p>
+            </div>
+        </main>
 
         <footer>
             <p>&copy; <span id="currentYear"></span> CalculatorValue. All Rights Reserved.</p>
